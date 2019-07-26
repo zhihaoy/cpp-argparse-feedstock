@@ -1,0 +1,40 @@
+{% set version = "1.8" %}
+{% set sha256 = "75f59f80dbe0eea5bc581916fb889673861ef4405ff20507d95275db49029530" %}
+
+package:
+  name: argparse
+  version: {{ version }}
+
+source:
+  url: https://github.com/p-ranav/argparse/archive/v{{ version }}.zip
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  skip: True  # [win and vc<14]
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake >=3.1
+    - ninja
+  host: []  # Empty host dependency section
+
+test:
+  commands:
+    - test -f ${PREFIX}/include/argparse/argparse.hpp           # [unix]
+    - test -f ${PREFIX}/lib/cmake/argparse/argparseConfig.cmake # [unix]
+    - if exist %LIBRARY_PREFIX%\include\argparse\argparse.hpp (exit 0) else (exit 1)   # [win]
+    - if exist %LIBRARY_PREFIX%\lib\cmake\argparseConfig.cmake (exit 0) else (exit 1)  # [win]
+
+about:
+  home: https://github.com/p-ranav/argparse
+  license: MIT
+  license_file: LICENSE
+  summary: Argument Parser for Modern C++
+  description: |
+    Simply include argparse.hpp and you're good to go.
+
+extra:
+  recipe-maintainers:
+    - zhihao.yuan
