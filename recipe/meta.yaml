@@ -1,5 +1,5 @@
-{% set version = "2.0" %}
-{% set sha256 = "afeda049b9619d54e5bc243178896cd604492ed8d546a34cf35f4edbe9d1f6dd" %}
+{% set version = "2.0.1" %}
+{% set sha256 = "f45b37a69e01129fc1ccd637c584b8d1f62459c7c4c7764be085aa4a3fd4f3ca" %}
 
 package:
   name: argparse
