@@ -1,12 +1,12 @@
-{% set version = "2.1" %}
-{% set sha256 = "7e7e3324e2ea10c1748bb774c79f6bfb8ac92883956850bf3331abff01f79b6a" %}
+{% set version = "2.1.git.3734fc6" %}
+{% set sha256 = "e8e7fcfe9b2c9594e14b8b3142c7e3e458bb0432bb920f4234d2accc870091a4" %}
 
 package:
   name: argparse
   version: {{ version }}
 
 source:
-  url: https://github.com/p-ranav/argparse/archive/v{{ version }}.zip
+  url: https://github.com/p-ranav/argparse/archive/3734fc6.zip
   sha256: {{ sha256 }}
 
 build:
